@@ -1,3 +1,4 @@
 *.db
 claude_desktop_config.json
-whatsapp.logwhatsapp-bridge/main
+whatsapp.log
+whatsapp-bridge/main
