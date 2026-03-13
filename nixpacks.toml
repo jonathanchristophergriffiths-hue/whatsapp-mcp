@@ -1,0 +1,16 @@
+[phases.setup]
+# We need gcc and libc for go-sqlite3 to compile (CGO)
+nixPkgs = ["...", "go", "gcc", "sqlite"]
+
+[phases.install]
+# Change into the bridge directory to download dependencies
+cmds = ["cd whatsapp-bridge && go mod download"]
+
+[phases.build]
+# Compile the binary inside the bridge folder
+# CGO_ENABLED=1 is required for the SQLite driver
+cmds = ["cd whatsapp-bridge && CGO_ENABLED=1 go build -o bridge main.go"]
+
+[start]
+# Tell Railway where the compiled binary lives
+cmd = "./whatsapp-bridge/bridge"
