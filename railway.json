@@ -3,9 +3,10 @@
   "build": {
     "builder": "RAILPACK",
     "rootDirectory": "/whatsapp-bridge",
-    "buildCmd": "CGO_ENABLED=1 go build -o bridge main.go"
+    "buildCmd": "CGO_ENABLED=1 go build -o ../bridge main.go"
   },
   "deploy": {
-    "startCommand": "./bridge"
+    "startCommand": "./bridge",
+    "restartPolicyType": "ON_FAILURE"
   }
 }
