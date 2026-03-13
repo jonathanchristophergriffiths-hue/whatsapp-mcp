@@ -1,0 +1,6 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "cd whatsapp-bridge && go run main.go"
+restartPolicy = "always"
