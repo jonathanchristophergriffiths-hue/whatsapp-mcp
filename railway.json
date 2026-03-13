@@ -6,8 +6,6 @@
     "buildCmd": "CGO_ENABLED=1 go build -o bridge main.go"
   },
   "deploy": {
-    "startCommand": "./bridge",
-    "healthCheckPath": "/",
-    "restartPolicyType": "ON_FAILURE"
+    "startCommand": "./bridge"
   }
 }
